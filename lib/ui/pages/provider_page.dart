@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+//immutable simple provider - declared globally
 final valueProvider = Provider<int>((ref) => 50);
 
+//Use either ConsumerWidget or Consumer
+/*
+
+ Provider needs Widget refrence to interact with it.
+    WidgetRef -> Provider
+
+*/
 class ProviderPage extends ConsumerWidget {
   const ProviderPage({
     super.key,
@@ -21,7 +29,7 @@ class ProviderPage extends ConsumerWidget {
         body: Center(
           child: Text(
             'The value is ${ref.watch(valueProvider)}',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         )
         // Consumer(
